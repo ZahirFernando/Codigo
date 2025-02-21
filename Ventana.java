@@ -20,7 +20,6 @@ import javax.swing.JTextField;
 
 public class Ventana extends JFrame {
 	
-	//esto es un comentario
 
     public Ventana() {
         this.setVisible(true);
@@ -32,8 +31,8 @@ public class Ventana extends JFrame {
         this.setMaximumSize(new Dimension(800, 800));
         this.setMinimumSize(new Dimension(400, 400));
 
-        //this.add(this.login());
-      //  this.add(this.registro()); 
+      //this.add(this.login());
+      //this.add(this.registro()); 
         this.add(this.user());
         this.repaint();
     }
@@ -95,27 +94,7 @@ public class Ventana extends JFrame {
         access.setBackground(Color.BLACK);
         mipanel.add(access);
          
-       /*  String dataset []= {"Camino real", "Centro", "La Fuente", "Villas del Encanto"};
-		JComboBox colonias = new JComboBox(dataset);
-		colonias.setSize(200, 40);
-		colonias.setLocation(40,410);
-		colonias.setOpaque(true);
-		mipanel.add(colonias);
-		
-        JRadioButton terms1 = new JRadioButton("Acepto los términos");
-        terms1.setSize(200, 40);
-        terms1.setLocation(40, 460);
-        mipanel.add(terms1);
-
-        JRadioButton terms2 = new JRadioButton("No acepto los términos");
-        terms2.setSize(200, 40);
-        terms2.setLocation(40, 500);
-        mipanel.add(terms2);
-
-        ButtonGroup terms_group = new ButtonGroup();
-        terms_group.add(terms1);
-        terms_group.add(terms2); */
-
+      
         this.repaint();
         return mipanel;
     }
@@ -209,26 +188,7 @@ public class Ventana extends JFrame {
        // registerButton.setForeground(Color.WHITE);
         registro.add(registerButton);
         
-        /*String columnas [] = {"Nombre","Apellidos","Edad","Genero","Carrera"};
-        String users[][] = {
-        		{"Zahir", "Diaz Barrera", "19", "Hombre", "IDS"},
-        		{"Keyra", "Grijalva Ochoa", "19", "Mujer", "IDS"},
-        		{"Aron", "Hernandez Cota", "21", "Hombre", "ITC"},
-        		{"Rene", "Leyva Estrada", "23", "Hombre", "IPA"},
-        		{"Jorge", "Lopez", "19", "Hombre", "IDS"},
-        		{"Carlos", "Hernandez Armenta", "19", "Hombre", "IDS"},
-        		{"Jose", "Reyes Pineda", "19", "Hombre", "IDS"},
-        		{"Mario", "Cazares", "19", "Hombre", "IDS"},
-        		{"Fernando", "Diaz Cota", "19", "Hombre", "IDS"}
-        		
-        };
-        
-        JTable tabla = new JTable(users,columnas);
-        JScrollPane scroll_pane = new JScrollPane(tabla);
-        scroll_pane.setSize(850, 300);
-        scroll_pane.setLocation(60, 120);
-        registro.add(scroll_pane);*/
-
+   
         this.repaint();
         return registro;
     }
@@ -320,43 +280,7 @@ public class Ventana extends JFrame {
     
 	        return mipanel;
 			
-    
+	        	// termina
      }  
 }
-
-
-/*import javax.swing.ButtonGroup;
-import javax.swing.JRadioButton;
-
-import java.awt.Color;
-import java.awt.Dimension;
-import java.awt.Font;
-
-import javax.swing.JButton;
-import javax.swing.JCheckBox;
-import javax.swing.JComboBox;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.JPasswordField;
-import javax.swing.JTextField;
-
-
-public class Ventana extends JFrame{
-
-	public Ventana() {
 		
-		this.setVisible(true);
-		this.setSize(1000, 500);
-		this.setLocationRelativeTo(null);
-		
-		this.setTitle("Login");
-		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		this.setResizable(true); 
-		
-		this.setMaximumSize(new Dimension(800,800));
-		this.setMinimumSize(new Dimension(400,400));
-		
-		this.add(this.login());
-		this.repaint();
-	} */		
