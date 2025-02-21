@@ -19,6 +19,8 @@ import javax.swing.JTextField;
 
 
 public class Ventana extends JFrame {
+	
+	//esto es un comentario
 
     public Ventana() {
         this.setVisible(true);
