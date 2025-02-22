@@ -33,9 +33,9 @@ public class Ventana extends JFrame {
         this.setMaximumSize(new Dimension(800, 800));
         this.setMinimumSize(new Dimension(400, 400));
 
-       this.add(this.login());
-       this.add(this.registro()); 
-      // this.add(this.user());
+       //this.add(this.login());
+       //this.add(this.registro()); 
+       this.add(this.user());
         this.repaint();
     }
 
@@ -193,7 +193,7 @@ public class Ventana extends JFrame {
    
         this.repaint();
         return registro;
-    }
+    } // ejercicio usuario
     
   		public JPanel user() {
         Font fuente = new Font("Arial", Font.BOLD, 20);
