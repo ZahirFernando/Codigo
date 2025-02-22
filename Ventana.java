@@ -18,12 +18,14 @@ import javax.swing.JTextField;
 
 
 
+//hola
+
 public class Ventana extends JFrame {
 	
 
-    public Ventana() {
+    public Ventana() {	//commit login
         this.setVisible(true);
-        this.setSize(1000, 500);
+        this.setSize(500, 500);
         this.setLocationRelativeTo(null);
         this.setTitle("Login");
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -31,9 +33,9 @@ public class Ventana extends JFrame {
         this.setMaximumSize(new Dimension(800, 800));
         this.setMinimumSize(new Dimension(400, 400));
 
-      //this.add(this.login());
+       this.add(this.login());
       //this.add(this.registro()); 
-        this.add(this.user());
+      // this.add(this.user());
         this.repaint();
     }
 
@@ -48,8 +50,8 @@ public class Ventana extends JFrame {
         mipanel.setLayout(null);
 
         JLabel etiqueta1 = new JLabel("Usuarios");
-        etiqueta1.setSize(260, 30);
-        etiqueta1.setLocation(360,10);
+        etiqueta1.setSize(120, 30);
+        etiqueta1.setLocation(160,10);
         etiqueta1.setHorizontalAlignment(JLabel.CENTER);
         etiqueta1.setFont(new Font("American Typewriter", Font.BOLD, 24));
         mipanel.add(etiqueta1);
