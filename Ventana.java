@@ -1,4 +1,5 @@
 import javax.swing.ButtonGroup;
+import javax.swing.ImageIcon;
 import javax.swing.JRadioButton;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
@@ -6,6 +7,8 @@ import javax.swing.JTable;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
+import java.awt.Graphics;
+import java.awt.Image;
 
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
@@ -25,7 +28,7 @@ public class Ventana extends JFrame {
 
     public Ventana() {	//commit login
         this.setVisible(true);
-        this.setSize(1000, 500);
+        this.setSize(900, 500);
         this.setLocationRelativeTo(null);
         this.setTitle("Login");
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -33,70 +36,82 @@ public class Ventana extends JFrame {
         this.setMaximumSize(new Dimension(800, 800));
         this.setMinimumSize(new Dimension(400, 400));
 
-       //this.add(this.login());
+       this.add(this.login());
        //this.add(this.registro()); 
-       this.add(this.user());
+       //this.add(this.user());
         this.repaint();
     }
 
-    public JPanel login() { // Ejercicio Registro
-        Font fuente = new Font("Arial", Font.BOLD, 20);
-
+    public JPanel login() { 
+        Font fuente = new Font("Times New Roman", Font.BOLD, 20);
+     	
         JPanel mipanel = new JPanel();
-        mipanel.setBackground(Color.decode("#D3D3D3"));
+        mipanel.setBackground(Color.decode("#4682B4"));
         mipanel.setOpaque(true);
         mipanel.setSize(1000, 500);
         mipanel.setLocation(0, 0);
         mipanel.setLayout(null);
-
-        JLabel etiqueta1 = new JLabel("Bienvenido");
-        etiqueta1.setSize(360, 30);
+        
+        ImageIcon imagen = new ImageIcon("///Users/zahirdiazbarrera/eclipse-workspace/Codigo/images/Login.png");
+		JLabel icon_img = new JLabel();
+		icon_img.setBounds(400, 0, 500, 500);
+		icon_img.setIcon(new ImageIcon(imagen.getImage().getScaledInstance(icon_img.getWidth(), icon_img.getHeight(),Image.SCALE_DEFAULT)));
+		mipanel.add(icon_img);
+		
+        JLabel etiqueta1 = new JLabel("Welcome");
+        etiqueta1.setSize(300, 30);
         etiqueta1.setLocation(60,10);
         etiqueta1.setHorizontalAlignment(JLabel.CENTER);
         etiqueta1.setFont(new Font("American Typewriter", Font.BOLD, 24));
         mipanel.add(etiqueta1);
 
-        JLabel etiqueta2 = new JLabel("Ingrese su correo:");
-        etiqueta2.setSize(200, 30);
-        etiqueta2.setLocation(40, 80);
+        JLabel etiqueta2 = new JLabel("Username:");
+        etiqueta2.setSize(300, 30);
+        etiqueta2.setLocation(60, 80);
         etiqueta2.setFont(fuente);
         mipanel.add(etiqueta2);
 
         JTextField email = new JTextField();
         email.setSize(300, 30);
-        email.setLocation(38, 110);
+        email.setLocation(58, 110);
         email.setFont(fuente);
         mipanel.add(email);
 
-        JLabel password = new JLabel("Ingrese su contraseña:");
-        password.setSize(250, 30);
-        password.setLocation(40, 150);
+        JLabel password = new JLabel("Password:");
+        password.setSize(360, 30);
+        password.setLocation(60, 150);
         password.setFont(fuente);
         mipanel.add(password);
 
         JPasswordField password_tag = new JPasswordField();
-        password_tag.setBounds(38, 180, 300, 30);
+        password_tag.setBounds(58, 180, 300, 30);
         password_tag.setFont(fuente);
         mipanel.add(password_tag);
 
-        JCheckBox terms = new JCheckBox("Recordarme", false);
+        JCheckBox terms = new JCheckBox("Remember me", false);
         terms.setSize(250, 30);
-        terms.setLocation(40, 210);
+        terms.setLocation(55, 210);
         terms.setBackground(Color.decode("#D3D3D3"));
         mipanel.add(terms);
 
-        JLabel forgot_tag = new JLabel("¿Olvidó su contraseña?");
+        JLabel forgot_tag = new JLabel("Forgot your password?");
         forgot_tag.setSize(250, 30);
-        forgot_tag.setLocation(200, 240);
+        forgot_tag.setLocation(215, 240);
         mipanel.add(forgot_tag);
+        
+        JLabel forgot_user = new JLabel("Don't have a account?");
+        forgot_user.setSize(250, 30);
+        forgot_user.setLocation(140, 400);
+        mipanel.add(forgot_user);
 
-        JButton access = new JButton("ACCEDER");
+        JButton access = new JButton("Log In");
         access.setBounds(110, 350, 200, 50);
         access.setFont(fuente);
         access.setBackground(Color.BLACK);
         mipanel.add(access);
-         
-      
+        
+       
+       
         this.repaint();
         return mipanel;
     }
@@ -279,10 +294,11 @@ public class Ventana extends JFrame {
         access2.setBackground(Color.BLACK);
         mipanel.add(access2);
         
+        return mipanel;
+		
     
-	        return mipanel;
-			
-	        	// termina
-     }  
+  		}
+       
+
 }
 		
