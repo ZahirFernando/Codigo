@@ -4,6 +4,7 @@ import javax.swing.JRadioButton;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 
+import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
@@ -28,17 +29,18 @@ public class Ventana extends JFrame {
 
     public Ventana() {	//commit login
         this.setVisible(true);
-        this.setSize(900, 500);
+        this.setSize(365, 500);
         this.setLocationRelativeTo(null);
         this.setTitle("Login");
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setResizable(true);
         this.setMaximumSize(new Dimension(800, 800));
-        this.setMinimumSize(new Dimension(400, 400));
+        this.setMinimumSize(new Dimension(300, 300));
 
-       this.add(this.login());
+       //this.add(this.login());
        //this.add(this.registro()); 
        //this.add(this.user());
+        this.add(this.calculadora());
         this.repaint();
     }
 
@@ -116,7 +118,8 @@ public class Ventana extends JFrame {
         return mipanel;
     }
 
-  		public JPanel registro() {
+  	public JPanel registro() {
+  		
         JPanel registro = new JPanel();
         registro.setOpaque(true);
         registro.setSize(500, 500);
@@ -210,7 +213,8 @@ public class Ventana extends JFrame {
         return registro;
     } // ejercicio usuario
     
-  		public JPanel user() {
+  	public JPanel user() {
+  		
         Font fuente = new Font("Arial", Font.BOLD, 20);
 
         JPanel mipanel = new JPanel();
@@ -298,7 +302,135 @@ public class Ventana extends JFrame {
 		
     
   		}
-       
+  	
+  	public JPanel calculadora() {
+  		
+  		JPanel panel = new JPanel();
+  		panel.setBackground(Color.decode("#FFFFFF"));
+  		panel.setSize(400, 500);
+  		panel.setLayout(null);
+  		
+  		JTextField pantalla = new JTextField();
+  		pantalla.setSize(345, 90);
+  		pantalla.setOpaque(true);
+  		pantalla.setHorizontalAlignment(JLabel.HEIGHT);
+  		pantalla.setLocation(10, 10);
+  		panel.add(pantalla);
+  		
+  		JButton num0 = new JButton("0");
+  		num0.setSize(80, 60);
+  		num0.setBackground(Color.GRAY);
+  		num0.setLocation(10, 390);
+  		panel.add(num0);
+  		
+  		JButton num1 = new JButton("1");
+  		num1.setSize(80, 60);
+  		num1.setBackground(Color.GRAY);
+  		num1.setLocation(10, 320);
+  		panel.add(num1);
+  		
+  		JButton num2 = new JButton("2");
+  		num2.setSize(80, 60);
+  		num2.setBackground(Color.GRAY);
+  		num2.setLocation(100, 320);
+  		panel.add(num2);
+  		
+  		JButton num3 = new JButton("3");
+  		num3.setSize(80, 60);
+  		num3.setBackground(Color.GRAY);
+  		num3.setLocation(190, 320);
+  		panel.add(num3);
+  		
+  		JButton resta = new JButton("-");
+  		resta.setSize(80, 60);
+  		resta.setBackground(Color.GRAY);
+  		resta.setLocation(280, 320);
+  		panel.add(resta);
+  		
+  		JButton button = new JButton(".");
+  		button.setSize(80, 60);
+  		button.setBackground(Color.GRAY);
+  		button.setLocation(100, 390);
+  		panel.add(button);
+  		
+  		JButton igual = new JButton("=");
+  		igual.setSize(80, 60	);
+  		igual.setBackground(Color.GRAY);
+  		igual.setLocation(190, 390);
+  		panel.add(igual);
+  		
+  		JButton suma = new JButton("+");
+  		suma.setSize(80, 60);
+  		suma.setBackground(Color.GRAY);
+  		suma.setLocation(280, 390);
+  		panel.add(suma);
+  		
+  		JButton num4 = new JButton("4");
+  		num4.setSize(80, 60);
+  		num4.setBackground(Color.GRAY);
+  		num4.setLocation(10, 250);
+  		panel.add(num4);
+  		
+  		JButton num5 = new JButton("5");
+  		num5.setSize(80, 60);
+  		num5.setBackground(Color.GRAY);
+  		num5.setLocation(100, 250);
+  		panel.add(num5);
+  		
+  		JButton num6 = new JButton("6");
+  		num6.setSize(80, 60);
+  		num6.setBackground(Color.GRAY);
+  		num6.setLocation(190, 250);
+  		panel.add(num6);
+  		
+  		JButton multi = new JButton("*");
+  		multi.setSize(80, 60);
+  		multi.setBackground(Color.GRAY);
+  		multi.setLocation(280, 250);
+  		panel.add(multi);
+  		
+  		JButton num7 = new JButton("7");
+  		num7.setSize(80, 60);
+  		num7.setBackground(Color.GRAY);
+  		num7.setLocation(10, 180);
+  		panel.add(num7);
+  		
+  		JButton num8 = new JButton("8");
+  		num8.setSize(80, 60);
+  		num8.setBackground(Color.GRAY);
+  		num8.setLocation(100, 180);
+  		panel.add(num8);
+  		
+  		JButton num9 = new JButton("9");
+  		num9.setSize(80, 60);
+  		num9.setBackground(Color.GRAY);
+  		num9.setLocation(190, 180);
+  		panel.add(num9);
+  		
+  		JButton divi = new JButton("/");
+  		divi.setSize(80, 60);
+  		divi.setBackground(Color.GRAY);
+  		divi.setLocation(280, 180);
+  		panel.add(divi);
+  		
+  		JButton ce = new JButton("CE");
+  		ce.setSize(100, 60);
+  		ce.setBackground(Color.GRAY);
+  		ce.setLocation(10, 110);
+  		panel.add(ce);
+  		
+  		JButton barra = new JButton("");
+  		barra.setSize(240, 60);
+  		barra.setBackground(Color.GRAY);
+  		barra.setLocation(120, 110);
+  		panel.add(barra);
 
+ 	
+  		
+  		return panel;
+  		
+  		
+  	}
 }
+
 		
