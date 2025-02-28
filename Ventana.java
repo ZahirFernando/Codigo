@@ -9,6 +9,7 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Graphics;
+import java.awt.GridLayout;
 import java.awt.Image;
 import java.awt.Toolkit;
 
@@ -38,7 +39,7 @@ public class Ventana extends JFrame {
         this.setMaximumSize(new Dimension(800, 800));
         this.setMinimumSize(new Dimension(300, 300));
         
-        setVisible(true);
+     /*   setVisible(true);
         setTitle("Ejemplo");
         setSize(400 + getInsets().left,600 + getInsets().top + getInsets().bottom);
         setLocationRelativeTo(null);
@@ -46,7 +47,7 @@ public class Ventana extends JFrame {
         
         Toolkit tk = Toolkit.getDefaultToolkit();
         Image myIcon = tk.getImage("///Users/zahirdiazbarrera/eclipse-workspace/Codigo/images/Login.png");
-        setIconImage(myIcon);
+        setIconImage(myIcon); */
         
         
         
@@ -55,7 +56,8 @@ public class Ventana extends JFrame {
        //this.add(this.login());
        //this.add(this.registro()); 
        //this.add(this.user());
-       // this.add(this.calculadora());
+       //this.add(this.calculadora());
+        this.add(this.calculadora2());
         this.repaint();
     }
 
@@ -447,6 +449,60 @@ public class Ventana extends JFrame {
   		
   	}
   	
+  	public JPanel calculadora2() {
+  		
+  		JPanel panel_ = new JPanel();
+  		panel_.setBackground(Color.decode("#FFFFFF"));
+  		panel_.setSize(400, 500);
+  		panel_.setLayout(null); 
+  		
+  		Font fuente = new Font("Arial", Font.BOLD, 40);
+		JPanel mipanel = new JPanel();
+		
+		mipanel.setBackground(Color.decode("#380038")); 
+		mipanel.setOpaque(true);		
+		mipanel.setLayout(new BorderLayout());
+		
+		JLabel results = new JLabel("20.00");
+		results.setBackground(Color.WHITE);
+		results.setOpaque(true);
+		results.setFont(fuente);
+		results.setHorizontalAlignment(JLabel.RIGHT);
+		mipanel.add(results,BorderLayout.NORTH);
+		
+		JPanel centro = new JPanel();
+		centro.setBackground(Color.BLUE);
+		centro.setOpaque(true);
+		centro.setLayout(new BorderLayout());
+		mipanel.add(centro,BorderLayout.CENTER);
+		
+		JPanel botones = new JPanel();
+		botones.setLayout(new GridLayout(4,3));
+		centro.add(botones,BorderLayout.CENTER);
+		
+		String[] textos = {"9", "8", "7", "6", "5", "4", "3", "2", "1", "0", ".","%"};
+		
+		for(String texto_boton : textos) {
+			JButton boton = new JButton(texto_boton);
+			botones.add(boton);
+		}
+		
+		JPanel orilla = new JPanel();
+		orilla.setLayout(new GridLayout(6,1));
+		centro.add(orilla,BorderLayout.LINE_END);
+		
+		String[] textos2 = {"+", "-", "*", "/", "=", "CE"};
+		
+		for(String texto_boton : textos2) {
+			JButton boton = new JButton(texto_boton);
+			orilla.add(boton);
+		}
+		
+		return mipanel;
+  		
+		//return panel_
+  	
+  	}
   	
 
 }
