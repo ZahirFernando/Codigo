@@ -10,6 +10,7 @@ import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Image;
+import java.awt.Toolkit;
 
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
@@ -27,7 +28,7 @@ import javax.swing.JTextField;
 public class Ventana extends JFrame {
 	
 
-    public Ventana() {	//commit login
+   public Ventana() {	//commit login
         this.setVisible(true);
         this.setSize(365, 500);
         this.setLocationRelativeTo(null);
@@ -36,11 +37,25 @@ public class Ventana extends JFrame {
         this.setResizable(true);
         this.setMaximumSize(new Dimension(800, 800));
         this.setMinimumSize(new Dimension(300, 300));
+        
+        setVisible(true);
+        setTitle("Ejemplo");
+        setSize(400 + getInsets().left,600 + getInsets().top + getInsets().bottom);
+        setLocationRelativeTo(null);
+        setDefaultCloseOperation(EXIT_ON_CLOSE); 
+        
+        Toolkit tk = Toolkit.getDefaultToolkit();
+        Image myIcon = tk.getImage("///Users/zahirdiazbarrera/eclipse-workspace/Codigo/images/Login.png");
+        setIconImage(myIcon);
+        
+        
+        
+        
 
        //this.add(this.login());
        //this.add(this.registro()); 
        //this.add(this.user());
-        this.add(this.calculadora());
+       // this.add(this.calculadora());
         this.repaint();
     }
 
@@ -431,6 +446,9 @@ public class Ventana extends JFrame {
   		
   		
   	}
+  	
+  	
+
 }
 
 		
