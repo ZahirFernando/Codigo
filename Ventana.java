@@ -451,10 +451,10 @@ public class Ventana extends JFrame {
   	
   	public JPanel calculadora2() {
   		
-  		JPanel panel_ = new JPanel();
+  		/*JPanel panel_ = new JPanel();
   		panel_.setBackground(Color.decode("#FFFFFF"));
   		panel_.setSize(400, 500);
-  		panel_.setLayout(null); 
+  		panel_.setLayout(null); */
   		
   		Font fuente = new Font("Arial", Font.BOLD, 40);
 		JPanel mipanel = new JPanel();
