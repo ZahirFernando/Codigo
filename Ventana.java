@@ -1,3 +1,4 @@
+import javax.swing.BorderFactory;
 import javax.swing.ButtonGroup;
 import javax.swing.ImageIcon;
 import javax.swing.JRadioButton;
@@ -31,7 +32,7 @@ public class Ventana extends JFrame {
 
    public Ventana() {	//commit login
         this.setVisible(true);
-        this.setSize(365, 500);
+        this.setSize(400, 500);
         this.setLocationRelativeTo(null);
         this.setTitle("Login");
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -57,7 +58,8 @@ public class Ventana extends JFrame {
        //this.add(this.registro()); 
        //this.add(this.user());
        //this.add(this.calculadora());
-        this.add(this.calculadora2());
+       //this.add(this.calculadora2());
+       //this.add(this.interes());
         this.repaint();
     }
 
@@ -500,10 +502,75 @@ public class Ventana extends JFrame {
 		
 		return mipanel;
   		
-		//return panel_
+	
   	
   	}
   	
+  	public JPanel interes() {
+  		
+  		JPanel panel_ = new JPanel();
+  		panel_.setBackground(Color.decode("#FFFFFF"));
+  		panel_.setSize(400, 500);
+  		panel_.setLayout(null); 
+  		
+  		panel_.setBackground(Color.decode("#380038")); 
+		panel_.setOpaque(true);		
+		panel_.setLayout(new BorderLayout());
+  		
+  		JPanel centro = new JPanel();
+		centro.setBackground(Color.GREEN);
+		centro.setOpaque(true);
+		centro.setLayout(new BorderLayout());
+		panel_.add(centro,BorderLayout.CENTER);
+		
+		JLabel results = new JLabel("INTERES");
+		results.setBackground(Color.WHITE);
+		results.setOpaque(true);
+		results.setHorizontalAlignment(JLabel.LEFT);
+		panel_.add(results,BorderLayout.NORTH);
+		
+		JPanel sur = new JPanel();
+		sur.setOpaque(true);
+		sur.setBackground(Color.cyan);
+	    sur.setLayout(new GridLayout(2,2,0,40));
+	    panel_.add(sur, BorderLayout.SOUTH);
+	    
+	    JLabel text = new JLabel("Interes");
+	    text.setBorder(BorderFactory.createMatteBorder(30,80,1,1, Color.cyan));
+	    sur.add(text);
+	    
+	    JTextField text1 = new JTextField("315.0000002");
+	    sur.add(text1);
+	    
+	    
+	    
+	    
+	    
+		
+		
+			
+		
+		
+		
+	/*	JPanel calcular = new JPanel();
+		calcular.setBackground(Color.WHITE);
+		calcular.setOpaque(true);
+		calcular.setSize(100, 50);
+		calcular.setLocation(10, 100);
+		calcular.setLayout(new BorderLayout());
+		panel_.add(centro,BorderLayout.CENTER); */
+		
+		
+		
+		
+		
+		
+  		
+  		
+  		
+  		return panel_;
+  		
+  	}
 
 }
 
