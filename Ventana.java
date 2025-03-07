@@ -37,7 +37,7 @@ public class Ventana extends JFrame {
 
    public Ventana() {	//commit login
         this.setVisible(true);
-        this.setSize(700, 600);
+        this.setSize(800, 800);
         this.setLocationRelativeTo(null);
         this.setTitle("Login");
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -577,22 +577,107 @@ public class Ventana extends JFrame {
   		
   	}
   	
-  	@Override
+  @Override
   	public void paint(Graphics g) {
   		
   		super.paint(g);
   		
   		Graphics2D g2d = (Graphics2D) g.create ();
   		g2d.setStroke(new BasicStroke(5));
+  	 		
+  		g2d.setColor(Color.yellow);
+  		g2d.drawArc(30, 50, 60, 60, 0, 360);
+  		g2d.fillArc(30, 50, 60, 60, 0, 360);
+  		g2d.setColor(Color.orange);
+  		g2d.drawRect(200, 200, 380, 380);
+  		g2d.fillRect(200, 200, 380, 380);
+  		g2d.setColor(Color.red);
+  		g2d.drawRect(240, 380, 100, 200);
+  		g2d.fillRect(240,380,100,200);
+  		g2d.setColor(Color.gray);
+  		g2d.drawRect(140, 585, 500, 100);
+  		g2d.fillRect(140, 585, 500, 100);
+  		g2d.setColor(Color.white);
+  		g2d.drawRect(420, 280, 100, 80);
+  		g2d.fillRect(420, 280, 100, 80);
+  		g2d.setColor(Color.red);
+  		g2d.drawRect(465, 280, 5, 75);
+  		g2d.fillRect(465, 280, 5, 75);
+  		g2d.drawRect(420, 320, 95, 5);
+  		g2d.fillRect(420, 320, 95, 5);
+  		g2d.drawRect(420, 280, 100, 80);
+  		g2d.setColor(Color.decode("#008000"));
+  		g2d.drawRect(0, 650, 800, 40);
+  		g2d.fillRect(0, 650, 800, 40);
+  		g2d.setColor(Color.decode("#39FF14"));
+  		g2d.drawRect(0, 690, 800, 50);
+  		g2d.fillRect(0, 690, 800, 50);
+  		g2d.setColor(Color.decode("#F5F5DC"));
+  		g2d.drawRect(0, 730, 800, 30);
+  		g2d.fillRect(0, 730, 800, 30);
+  		g2d.setColor(Color.decode("#C19A6B"));
+  		g2d.drawRect(0, 760, 800, 40);
+  		g2d.fillRect(0, 760, 800, 40);
+  		g2d.setColor(Color.decode("#C19A6B"));
+  		g2d.drawArc(245, 470, 10, 10, 0, 360);
+        
+        g2d.setColor(Color.GRAY);
+  		g2d.drawRect(250, 120, 50, 60);
+  		g2d.fillRect(250, 120, 50, 60);
   		
+  		int[] xs = {450, 200, 580};
+        int[] ys = {120, 200, 200};
+        
+        g2d.setColor(Color.DARK_GRAY);
+        
+        g2d.drawPolygon(xs, ys, 3);
+        g2d.fillPolygon(xs, ys, 3);
+        
+        g2d.setColor(Color.decode("#C19A6B"));
+  		g2d.drawRect(0, 460, 195, 10);
+  		g2d.fillRect(0, 460, 195, 10);
+  		g2d.drawRect(0, 520, 195, 10);
+  		g2d.fillRect(0, 520, 195, 10);
+  		g2d.drawRect(585, 460, 215, 10);
+  		g2d.fillRect(585, 460, 215, 10);
+  		g2d.drawRect(585, 520, 215, 10);
+  		g2d.fillRect(585, 520, 215, 10);
+  		g2d.drawRect(645, 600, 155, 10);
+  		g2d.fillRect(645, 600, 155, 10);
+  		g2d.drawRect(0, 600, 135, 10);
+  		g2d.fillRect(0, 600, 135, 10);
   		
-  		g2d.drawRect(100, 100, 80, 80);
-  		g2d.setColor(Color.BLACK);
-  		g2d.fillRect(120,120,80,80);
-  		g2d.setColor(Color.BLUE);
+  		g2d.setColor(Color.decode("#C19A6B"));
+  		g2d.drawRect(10, 445, 15, 200);
+  		g2d.fillRect(10, 445, 15, 200);
+  		g2d.drawRect(40, 445, 15, 200);
+  		g2d.fillRect(40, 445, 15, 200);
+  		g2d.drawRect(70, 445, 15, 200);
+  		g2d.fillRect(70, 445, 15, 200);
+  		g2d.drawRect(100, 445, 15, 200);
+  		g2d.fillRect(100, 445, 15, 200);
+  		g2d.drawRect(130, 445, 15, 200);
+  		g2d.fillRect(130, 445, 15, 200);
+  		g2d.drawRect(160, 445, 15, 135);
+  		g2d.fillRect(160, 445, 15, 135);
+  		g2d.drawRect(610, 445, 15, 135);
+  		g2d.fillRect(610, 445, 15, 135);
+  		g2d.drawRect(645, 445, 15, 200);
+  		g2d.fillRect(645, 445, 15, 200);
+  		g2d.drawRect(678, 445, 15, 200);
+  		g2d.fillRect(678, 445, 15, 200);
+  		g2d.drawRect(708, 445, 15, 200);
+  		g2d.fillRect(708, 445, 15, 200);
+  		g2d.drawRect(738, 445, 15, 200);
+  		g2d.fillRect(738, 445, 15, 200);
+  		g2d.drawRect(770, 445, 15, 200);
+  		g2d.fillRect(770, 445, 15, 200); 
+        
+  	
+  		/*g2d.setColor(Color.BLUE);
   		
-  		//g2d.setFont(new Font("Times New Roman", Font.BOLD, 20)); // no se le puede agregar texto M1
-  		//g2d.drawString("", 160, 200);
+  		g2d.setFont(new Font("Times New Roman", Font.BOLD, 20)); // no se le puede agregar texto M1
+  		g2d.drawString("", 160, 200);
   		
   		g2d.drawLine(0, 0, 400, 400);
   		g2d.drawArc(420, 100, 100, 100, 0, 360); //se puede poner en 180 como si fuera medicion de angulo
@@ -605,9 +690,9 @@ public class Ventana extends JFrame {
   		g2d.fillOval(100, 400, 90, 190);
   		
   		
-  		//g2d.drawString("Hola",0,0);
+  		g2d.drawString("Hola",0,0);
   		
-  		try 
+  		try 	
   		{
   			BufferedImage image = ImageIO.read(new File("images/yone.png")); 
   			g2d.drawImage(image, 500, 150, null);
@@ -634,8 +719,15 @@ public class Ventana extends JFrame {
   		g2d.fillRect(420, 420, 160, 160);
   		
   		
-  		
+  	} */
+
+	  	
+  	
   	}
 }
+
+
+
+
 
 		
