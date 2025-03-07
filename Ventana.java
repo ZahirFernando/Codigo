@@ -1,3 +1,4 @@
+import javax.imageio.ImageIO;
 import javax.swing.BorderFactory;
 import javax.swing.ButtonGroup;
 import javax.swing.ImageIcon;
@@ -5,14 +6,18 @@ import javax.swing.JRadioButton;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 
+import java.awt.BasicStroke;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Graphics;
+import java.awt.Graphics2D;
 import java.awt.GridLayout;
 import java.awt.Image;
 import java.awt.Toolkit;
+import java.awt.image.BufferedImage;
+import java.io.File;
 
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
@@ -32,7 +37,7 @@ public class Ventana extends JFrame {
 
    public Ventana() {	//commit login
         this.setVisible(true);
-        this.setSize(400, 500);
+        this.setSize(700, 600);
         this.setLocationRelativeTo(null);
         this.setTitle("Login");
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -571,7 +576,66 @@ public class Ventana extends JFrame {
   		return panel_;
   		
   	}
-
+  	
+  	@Override
+  	public void paint(Graphics g) {
+  		
+  		super.paint(g);
+  		
+  		Graphics2D g2d = (Graphics2D) g.create ();
+  		g2d.setStroke(new BasicStroke(5));
+  		
+  		
+  		g2d.drawRect(100, 100, 80, 80);
+  		g2d.setColor(Color.BLACK);
+  		g2d.fillRect(120,120,80,80);
+  		g2d.setColor(Color.BLUE);
+  		
+  		//g2d.setFont(new Font("Times New Roman", Font.BOLD, 20)); // no se le puede agregar texto M1
+  		//g2d.drawString("", 160, 200);
+  		
+  		g2d.drawLine(0, 0, 400, 400);
+  		g2d.drawArc(420, 100, 100, 100, 0, 360); //se puede poner en 180 como si fuera medicion de angulo
+  		g2d.setColor(Color.green);
+  		g2d.drawArc(300, 100, 100, 100, 0, 360);
+  		g2d.setColor(Color.GREEN);
+  		g2d.fillArc(300, 100, 100, 100, 0, 180);
+  		g2d.setColor(Color.RED);
+  		g2d.drawOval(50, 400, 90, 190);
+  		g2d.fillOval(100, 400, 90, 190);
+  		
+  		
+  		//g2d.drawString("Hola",0,0);
+  		
+  		try 
+  		{
+  			BufferedImage image = ImageIO.read(new File("images/yone.png")); 
+  			g2d.drawImage(image, 500, 150, null);
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+  		
+  		
+  		
+  		int[] xs = {400,350,450};
+  		int[] ys = {200,250,250};
+  		
+  		g2d.drawPolygon(xs, ys, 3);
+  		
+  		int[] xs2 = {400,350,450};
+  		int[] ys2 = {200,250,250};
+  		
+  		g2d.fillPolygon(xs2, ys2, 3);
+  		
+  		g2d.setColor(Color.BLACK);
+  		g2d.drawRect(400, 400, 160, 160);
+  		g2d.fillRect(420, 420, 160, 160);
+  		
+  		
+  		
+  	}
 }
 
 		
