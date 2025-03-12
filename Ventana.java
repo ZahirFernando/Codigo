@@ -623,11 +623,11 @@ public class Ventana extends JFrame {
   		g2d.setColor(Color.BLACK);
   		g2d.drawRect(950, 545, 120, 200);
   		g2d.setColor(Color.decode("#006910"));
-  		g2d.fillRect(950, 545, 120, 200);
+  		g2d.fillRect(990, 545, 80, 200);
   		g2d.setColor(Color.BLACK);
   		g2d.drawRoundRect(920, 485, 175, 60, 20, 20);
   		g2d.setColor(Color.decode("#006910"));
-  		g2d.fillRoundRect(920, 485, 175, 60, 20, 20);	
+  		g2d.fillRoundRect(980, 485, 115, 60, 20, 20);	
   		
   		g2d.setColor(Color.BLACK);
   		g2d.drawRoundRect(300, 120, 220, 100, 10, 5);
