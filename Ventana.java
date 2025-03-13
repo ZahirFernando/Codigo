@@ -16,6 +16,8 @@ import java.awt.Graphics2D;
 import java.awt.GridLayout;
 import java.awt.Image;
 import java.awt.Toolkit;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
@@ -25,6 +27,7 @@ import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
@@ -38,7 +41,7 @@ public class Ventana extends JFrame {
 
    public Ventana() {	//commit login
         this.setVisible(true);
-        this.setSize(800, 600);
+        this.setSize(1000, 500);
         this.setLocationRelativeTo(null);
         this.setTitle("Login");
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -46,27 +49,17 @@ public class Ventana extends JFrame {
         this.setMaximumSize(new Dimension(800, 800));
         this.setMinimumSize(new Dimension(300, 300));
         
-     /*   setVisible(true);
-        setTitle("Ejemplo");
-        setSize(400 + getInsets().left,600 + getInsets().top + getInsets().bottom);
-        setLocationRelativeTo(null);
-        setDefaultCloseOperation(EXIT_ON_CLOSE); 
-        
-        Toolkit tk = Toolkit.getDefaultToolkit();
-        Image myIcon = tk.getImage("///Users/zahirdiazbarrera/eclipse-workspace/Codigo/images/Login.png");
-        setIconImage(myIcon); */
-        
-        
-        
+ 
+               
         
 
-       //this.add(this.login());
-       //this.add(this.registro()); 
+       this.add(this.login());
+      // this.add(this.registro()); 
        //this.add(this.user());
        //this.add(this.calculadora());
        //this.add(this.calculadora2());
        //this.add(this.interes());
-        this.revalidate();
+       	//this.revalidate();
         this.repaint();
     }
 
@@ -80,11 +73,11 @@ public class Ventana extends JFrame {
         mipanel.setLocation(0, 0);
         mipanel.setLayout(null);
         
-        ImageIcon imagen = new ImageIcon("///Users/zahirdiazbarrera/eclipse-workspace/Codigo/images/Login.png");
+       /* ImageIcon imagen = new ImageIcon("///Users/zahirdiazbarrera/eclipse-workspace/Codigo/images/Login.png");
 		JLabel icon_img = new JLabel();
 		icon_img.setBounds(400, 0, 500, 500);
 		icon_img.setIcon(new ImageIcon(imagen.getImage().getScaledInstance(icon_img.getWidth(), icon_img.getHeight(),Image.SCALE_DEFAULT)));
-		mipanel.add(icon_img);
+		mipanel.add(icon_img);*/
 		
         JLabel etiqueta1 = new JLabel("Welcome");
         etiqueta1.setSize(300, 30);
@@ -138,8 +131,52 @@ public class Ventana extends JFrame {
         access.setBackground(Color.BLACK);
         mipanel.add(access);
         
+       access.addActionListener(new ActionListener() {
+
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			// TODO Auto-generated method stub
+			
+			Boolean flag1 = false, flag2 = false;
+			
+			if( email.getText().equals("")) {
+				email.setBorder(BorderFactory.createLineBorder(Color.red, 3));
+			} else 
+				email.setBorder(BorderFactory.createLineBorder(Color.green, 3));
+			flag1 = true;
+				
+			
+    	   
+			String password = new String(password_tag.getPassword());  
+		 
+	        if (password.equals("")) {
+	        	password_tag.setBorder(BorderFactory.createLineBorder(Color.red, 3));
+	        } else {
+	        	password_tag.setBorder(BorderFactory.createLineBorder(Color.green, 3));
+	        	flag2 = true;
+	        }
+    	   if (flag1 && flag2)
+    		   
+    		   if(email.getText().equals("zahir@alu.uabcs.mx"))
+    			   if(password.equals("Password"))
+    		   JOptionPane.showMessageDialog(null, "Bienvenido");
+			
+			else
+			{
+				JOptionPane.showMessageDialog(null, "Bienvenido", "usuario no encontrado",JOptionPane.WARNING_MESSAGE);
+			
+			}else
+				
+			{
+				JOptionPane.showMessageDialog(null, "Error al Inicio de Sesion", "usuario no encontrado", JOptionPane.WARNING_MESSAGE);
+		
+			}
+    	
+		}
+		
+       });   
        
-       
+    	
         this.repaint();
         return mipanel;
     }
@@ -234,10 +271,12 @@ public class Ventana extends JFrame {
        // registerButton.setForeground(Color.WHITE);
         registro.add(registerButton);
         
+       
+        
    
         this.repaint();
         return registro;
-    } // ejercicio usuario
+    } 
     
   	public JPanel user() {
   		
@@ -579,7 +618,9 @@ public class Ventana extends JFrame {
   		
   	}
   	
-  @Override
+}
+  	
+  /*@Override
   	public void paint(Graphics g) {
   		
   		super.paint(g);
@@ -704,6 +745,8 @@ public class Ventana extends JFrame {
 		
 	}
 	
+  	
+  
 }	
 
   		
@@ -712,7 +755,15 @@ public class Ventana extends JFrame {
   		
   		
   		
-  		
+	/*   setVisible(true);
+			setTitle("Ejemplo");
+			setSize(400 + getInsets().left,600 + getInsets().top + getInsets().bottom);
+			setLocationRelativeTo(null);
+			setDefaultCloseOperation(EXIT_ON_CLOSE); 
+
+			Toolkit tk = Toolkit.getDefaultToolkit();
+			Image myIcon = tk.getImage("///Users/zahirdiazbarrera/eclipse-workspace/Codigo/images/Login.png");
+			setIconImage(myIcon); */
   		
   		
   		
@@ -975,16 +1026,7 @@ public class Ventana extends JFrame {
   		
   		
   		
-  		
-  		
-  		
-  		
-
-
-  	
-  	
-  		
-  	 		
+	
   	/*	g2d.setColor(Color.yellow);
   		g2d.drawArc(30, 50, 60, 60, 0, 360);
   		g2d.fillArc(30, 50, 60, 60, 0, 360);
