@@ -54,13 +54,14 @@ public class Ventana extends JFrame {
         
 
        this.add(this.login());
-      // this.add(this.registro()); 
+       this.add(this.registro()); 
        //this.add(this.user());
        //this.add(this.calculadora());
        //this.add(this.calculadora2());
        //this.add(this.interes());
        	//this.revalidate();
         this.repaint();
+        
     }
 
     public JPanel login() { 
@@ -270,10 +271,32 @@ public class Ventana extends JFrame {
         registerButton.setBackground(Color.BLACK);
        // registerButton.setForeground(Color.WHITE);
         registro.add(registerButton);
-        
+     
+        registerButton.addActionListener( new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				if (user_tag.getText().equals("")) {
+					user_tag.setBorder(BorderFactory.createLineBorder(Color.red, 3));
+				} else 
+					user_tag.setBorder(BorderFactory.createLineBorder(Color.green, 3));
+					
+				if (biogra.getText().equals("")) {
+					biogra.setBorder(BorderFactory.createLineBorder(Color.red, 3));
+				} else 
+					biogra.setBorder(BorderFactory.createLineBorder(Color.green, 3));
+				
+				
+				if (preferencia.getText().equals("")) {
+					preferencia.setBorder(BorderFactory.createLineBorder(Color.red, 3));
+				} else 
+					preferencia.setBorder(BorderFactory.createLineBorder(Color.green, 3));
+			
+			}
+
+  		});	
        
-        
-   
         this.repaint();
         return registro;
     } 
