@@ -138,13 +138,13 @@ public class Ventana extends JFrame {
 		public void actionPerformed(ActionEvent e) {
 			// TODO Auto-generated method stub
 			
-			Boolean flag1 = false, flag2 = false;
+			//Boolean flag1 = false, flag2 = false;
 			
 			if( email.getText().equals("")) {
 				email.setBorder(BorderFactory.createLineBorder(Color.red, 3));
 			} else 
 				email.setBorder(BorderFactory.createLineBorder(Color.green, 3));
-			flag1 = true;
+			//flag1 = true;
 				
 			
     	   
@@ -154,9 +154,9 @@ public class Ventana extends JFrame {
 	        	password_tag.setBorder(BorderFactory.createLineBorder(Color.red, 3));
 	        } else {
 	        	password_tag.setBorder(BorderFactory.createLineBorder(Color.green, 3));
-	        	flag2 = true;
+	        	//flag2 = true;
 	        }
-    	   if (flag1 && flag2)
+    	   /*if (flag1 && flag2)
     		   
     		   if(email.getText().equals("zahir@alu.uabcs.mx"))
     			   if(password.equals("Password"))
@@ -171,9 +171,9 @@ public class Ventana extends JFrame {
 			{
 				JOptionPane.showMessageDialog(null, "Error al Inicio de Sesion", "usuario no encontrado", JOptionPane.WARNING_MESSAGE);
 		
-			}
+			} */
     	
-		}
+    	}
 		
        });   
        
