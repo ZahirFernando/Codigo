@@ -24,9 +24,13 @@ import java.io.IOException;
 
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
+import javax.swing.JCheckBoxMenuItem;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
@@ -41,7 +45,7 @@ public class Ventana extends JFrame {
 
    public Ventana() {	//commit login
         this.setVisible(true);
-        this.setSize(1000, 500);
+        this.setSize(800, 500);
         this.setLocationRelativeTo(null);
         this.setTitle("Login");
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -49,9 +53,85 @@ public class Ventana extends JFrame {
         this.setMaximumSize(new Dimension(800, 800));
         this.setMinimumSize(new Dimension(300, 300));
         
- 
-               
-        
+		JMenuBar barra = new JMenuBar();
+		   	
+   		JMenu file = new JMenu("Archivo");
+   		barra.add(file);
+   	
+   		JMenuItem open = new JMenuItem("Abrir");
+   		file.add(open);
+   	
+   		JMenuItem close = new JMenuItem("Cerrar");
+   		file.add(close);
+   
+   		JMenuItem op_1 = new JMenuItem("Ayuda");
+   		file.add(op_1);
+   		
+   		JMenu file2 = new JMenu("Cuenta");
+   		barra.add(file2);
+   		
+   		JMenuItem cnta = new JMenuItem("registro");
+   		file2.add(cnta);
+   		file2.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+					router("Registro");
+			}
+   			
+   		});
+   		
+   		JMenuItem logn = new JMenuItem("Login");
+   		file2.add(logn);
+   		file2.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+					router("Login");
+			}
+   		
+			
+   		});
+   		
+   		JMenu file3 = new JMenu("Usuarios");
+   		barra.add(file3);
+   		
+   		JMenuItem alta = new JMenuItem("Alta");
+   		file3.add(alta);
+   		
+   		JMenuItem baja = new JMenuItem("Baja");
+   		file3.add(baja);
+   		
+   		JMenuItem consultar = new JMenuItem("Consultar");
+   		file3.add(consultar);
+   		file3.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+					router("Consultar");
+			}
+   			
+   		});
+   		
+   		JMenu ayuda = new JMenu("Ayuda");
+   		barra.add(ayuda);
+   		
+   		JMenuItem msj = new JMenuItem("¿Cómo crear un usuario?");
+   		ayuda.add(msj);
+   		
+   		JMenuItem msj2 = new JMenuItem("¿Cómo acceder al sistema?");
+   		ayuda.add(msj2);
+   		
+   		JMenuItem msj3 = new JMenuItem("¿Qué pasa si olvidé mi contraseña?");
+   		ayuda.add(msj3);
+   		
+   		
+   		
+   		
+   		
 
        this.add(this.login());
        this.add(this.registro()); 
@@ -59,10 +139,13 @@ public class Ventana extends JFrame {
        //this.add(this.calculadora());
        //this.add(this.calculadora2());
        //this.add(this.interes());
-       	//this.revalidate();
-        this.repaint();
+       this.setJMenuBar(barra);
+       this.revalidate();
+       this.repaint();
+
         
     }
+   
 
     public JPanel login() { 
         Font fuente = new Font("Times New Roman", Font.BOLD, 20);
@@ -123,7 +206,7 @@ public class Ventana extends JFrame {
         
         JLabel forgot_user = new JLabel("Don't have a account?");
         forgot_user.setSize(250, 30);
-        forgot_user.setLocation(140, 400);
+        forgot_user.setLocation(140, 330);
         mipanel.add(forgot_user);
 
         JButton access = new JButton("Log In");
@@ -131,6 +214,23 @@ public class Ventana extends JFrame {
         access.setFont(fuente);
         access.setBackground(Color.BLACK);
         mipanel.add(access);
+        
+        JButton regist_but = new JButton("");
+        regist_but.setBounds(110, 400, 200, 50);
+        regist_but.setBackground(Color.black);
+        mipanel.add(regist_but);
+        
+        regist_but.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				router("Registro");
+			}
+        	
+        	
+        });
+        
         
        access.addActionListener(new ActionListener() {
 
@@ -181,6 +281,10 @@ public class Ventana extends JFrame {
         this.repaint();
         return mipanel;
     }
+    
+ 
+    	
+ 
 
   	public JPanel registro() {
   		
@@ -271,6 +375,22 @@ public class Ventana extends JFrame {
         registerButton.setBackground(Color.BLACK);
        // registerButton.setForeground(Color.WHITE);
         registro.add(registerButton);
+        
+        JButton login_but = new JButton("");
+        login_but.setBounds(110, 400, 200, 50);
+        login_but.setBackground(Color.black);
+        registro.add(login_but);
+        
+        login_but.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				router("Login");
+			}
+        	
+        	
+        });
      
         registerButton.addActionListener( new ActionListener() {
 
@@ -386,10 +506,27 @@ public class Ventana extends JFrame {
         access2.setBackground(Color.BLACK);
         mipanel.add(access2);
         
+        
+        
         return mipanel;
 		
     
   		}
+  	
+  	public void router (String route) {
+  		
+  		this.getContentPane().removeAll();
+  		
+  		if(route.equals("registro")) {
+  			this.add(this.registro());
+  		}
+  		if(route.equals("login")) {
+  			this.add(this.login());
+  		}
+  		
+  		this.repaint();
+  		this.revalidate();
+  	}
   	
   	public JPanel calculadora() {
   		
