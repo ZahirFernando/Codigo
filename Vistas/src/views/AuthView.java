@@ -167,7 +167,7 @@ public class AuthView {
 		
        }); 
        
-       ventana.add(mipanel);
+       ventana.add(mi_panel);
 	}
        
        public JPanel registro() {
@@ -276,30 +276,40 @@ public class AuthView {
            	
            });
         
-           registerButton.addActionListener( new ActionListener() {
+           registerButton.addActionListener(new ActionListener() {
+        	    @Override
+        	    public void actionPerformed(ActionEvent e) {
+        	        String username = user_field.getText().trim();
+        	        String bio = text_biogra.getText().trim();
+        	        String preferencias = user_preference.getText().trim();
+        	        String colonia = colonias.getSelectedItem().toString();
+        	        boolean aceptaTerminos = terms1.isSelected();
 
-   			@Override
-   			public void actionPerformed(ActionEvent e) {
-   				// TODO Auto-generated method stub
-   				if (user_tag.getText().equals("")) {
-   					user_tag.setBorder(BorderFactory.createLineBorder(Color.red, 3));
-   				} else 
-   					user_tag.setBorder(BorderFactory.createLineBorder(Color.green, 3));
-   					
-   				if (biogra.getText().equals("")) {
-   					biogra.setBorder(BorderFactory.createLineBorder(Color.red, 3));
-   				} else 
-   					biogra.setBorder(BorderFactory.createLineBorder(Color.green, 3));
-   				
-   				
-   				if (preferencia.getText().equals("")) {
-   					preferencia.setBorder(BorderFactory.createLineBorder(Color.red, 3));
-   				} else 
-   					preferencia.setBorder(BorderFactory.createLineBorder(Color.green, 3));
-   			
-   			}
+        	       
+        	        if (username.isEmpty() || bio.isEmpty() || preferencias.isEmpty() || !aceptaTerminos) {
+        	            JOptionPane.showMessageDialog(null, "Todos los campos son obligatorios y debe aceptar los términos.", "Error", JOptionPane.ERROR_MESSAGE);
+        	            return;
+        	        }
 
-     		});	
+        	        if (username.contains(" ")) {
+        	            JOptionPane.showMessageDialog(null, "El nombre de usuario no debe contener espacios.", "Error", JOptionPane.ERROR_MESSAGE);
+        	            return;
+        	        }
+
+        	       
+
+        	       
+        	        AuthModel model = new AuthModel();
+        	        boolean resultado = model.guardarUsuario(username, bio, preferencias, username + "@correo.com", "1234", colonia); // Ajusta email y contraseña reales
+
+        	        if (resultado) {
+        	            JOptionPane.showMessageDialog(null, "Registro exitoso.", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
+        	        } else {
+        	            JOptionPane.showMessageDialog(null, "Ocurrió un error al guardar los datos.", "Error", JOptionPane.ERROR_MESSAGE);
+        	        }
+        	    }
+        	});
+
          
    
            return registro;
